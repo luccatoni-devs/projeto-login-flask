@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Bem-vindo ao painel, {{ usuario_nome }}!</h2>
+    <p>Você está autenticado no sistema.</p>
+    
+    <section>
+        <h3>O que você gostaria de fazer?</h3>
+        <ul>
+            <li><a href="{{ url_for('editar_perfil') }}">Editar Perfil</a></li>
+            <li><a href="{{ url_for('alterar_senha') }}">Alterar Senha</a></li>
+        </ul>
+    </section>
+    
+    <a href="{{ url_for('logout') }}">Sair</a>
+{% endblock %}

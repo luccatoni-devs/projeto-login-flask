@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Verificar Conta{% endblock %}
+
+{% block content %}
+    <section class="form-section">
+        <h2>Verificação de Conta</h2>
+        <p>Enviamos um código para <strong>{{ email }}</strong>. Insira-o abaixo para ativar sua conta.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="form-container">
+            <input type="text" name="codigo" placeholder="Código de Verificação" required>
+            <button type="submit">Verificar</button>
+        </form>
+
+        <p>Não recebeu o código? <a href="{{ url_for('registro') }}">Tente registrar-se novamente</a>.</p>
+    </section>
+{% endblock %}

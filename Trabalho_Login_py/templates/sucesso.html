@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Sucesso{% endblock %}
+
+{% block content %}
+    <h2>Login realizado com sucesso!</h2>
+    <p>Você será redirecionado para o painel em instantes...</p>
+    <script>
+        setTimeout(() => {
+            window.location.href = "{{ url_for('dashboard') }}";
+        }, 2000); // redireciona após 2 segundos
+    </script>
+{% endblock %}
