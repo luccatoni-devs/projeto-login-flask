@@ -38,5 +38,5 @@ Este projeto é um sistema completo de autenticação desenvolvido com **Flask**
 
    ```bash
    git clone https://github.com/seu-usuario/flask-auth-system.git
-   cd flask-auth-system
+   cd Trabalho_Login_py
    
